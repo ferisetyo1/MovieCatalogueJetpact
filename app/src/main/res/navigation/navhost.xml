@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navhost"
+    app:startDestination="@id/menuMovieFM">
+
+    <fragment
+        android:id="@+id/menuMovieFM"
+        android:name="feri.com.moviecataloguejetpact.ui.movie_tv_fitur.menu_movie.MenuMovieFM"
+        android:label="fragment_menu_movie_f_m"
+        tools:layout="@layout/fragment_menu_movie_f_m" >
+        <action
+            android:id="@+id/goto_detail_movie"
+            app:destination="@id/detail_movie" />
+        <action
+            android:id="@+id/action_menuMovieFM_to_menuTVShowFM"
+            app:destination="@id/menuTVShowFM" />
+    </fragment>
+    <fragment
+        android:id="@+id/detail_movie"
+        android:name="feri.com.moviecataloguejetpact.ui.movie_tv_fitur.detail.DetailMovieFM"
+        android:label="fragment_menu_t_v_show_f_m"
+        tools:layout="@layout/fragment_detail_movie" >
+        <action
+            android:id="@+id/goto_menu_movie"
+            app:destination="@id/menuMovieFM" />
+        <action
+            android:id="@+id/action_detail_movie_to_menuTVShowFM"
+            app:destination="@id/menuTVShowFM" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuTVShowFM"
+        android:name="feri.com.moviecataloguejetpact.ui.movie_tv_fitur.menu_tv.MenuTVShowFM"
+        tools:layout="@layout/fragment_menu_tvshow_f_m"
+        android:label="MenuTVShowFM" >
+        <action
+            android:id="@+id/action_menuTVShowFM_to_menuMovieFM"
+            app:destination="@id/menuMovieFM" />
+        <action
+            android:id="@+id/action_menuTVShowFM_to_detail_movie"
+            app:destination="@id/detail_movie" />
+    </fragment>
+</navigation>
